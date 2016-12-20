@@ -2,7 +2,6 @@
 //  GRID
 //
 
-
 // GRID CONTAINER
 & when (@lui_component_grid = true){
 	.container {
@@ -20,7 +19,6 @@
 		}
 		
 		/* XS IS NOT SPECIFIED CUZ CONTAINER IS 100% - DEFAULT VALUE */
-		
 		& when (@grid_sm_enable = true){
 			@media (min-width:@grid_sm_start){
 				width: @lui_container_sm_width;
@@ -82,6 +80,13 @@
 		&.fluid {
 			width: 100%;
 		}
+
+		& when (@grid_print_enable = true){
+			@media print {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
 	}
 
 	.container-fluid,
@@ -119,6 +124,12 @@
 		}
 		& when (@grid_2k_enable = true){
 			&.max_2k {max-width: @lui_container_2k_width;}
+		}
+		& when (@grid_print_enable = true){
+			@media print {
+				width: 100%;
+				max-width: 100%;
+			}
 		}
 	}
 
